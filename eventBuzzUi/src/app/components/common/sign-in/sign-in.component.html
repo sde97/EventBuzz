@@ -1,0 +1,61 @@
+<div class="row">
+  <div class="col-md-7 content d-flex flex-column justify-content-center">
+    <div class="header">
+      <img src="../../../../assets/images/black.png" alt="" width="200px" />
+      <!-- <p class="p-2 sub-header-1">EventBuzz</p> -->
+      <br /><br /><br /><br />
+
+      <p class="sub-header-2" style="position: relative;">
+        Sign In to EventBuzz
+      </p>
+      <br />
+    </div>
+
+    <form [formGroup]="signInForm" (ngSubmit)="onSignIn()" class="p-2">
+      <div class="form-group">
+        <h6 class="p-2">Your Email</h6>
+        <input
+          type="text"
+          class="form-control"
+          id="emailId"
+          placeholder="jamesbond@mi6.co.uk"
+          formControlName="emailId"
+        />
+      </div>
+      <div class="form-group">
+        <div class="d-flex justify-content-between">
+          <h6 class="p-2">Password</h6>
+          <a class="p-2">Forgot your password?</a>
+        </div>
+        <input
+          type="password"
+          class="form-control"
+          id="password"
+          placeholder="6+ characters"
+          id="password"
+          formControlName="password"
+        />
+      </div>
+      <br />
+      <div class="button">
+        <button class="button-1 p-2" type="submit">
+          Sign In
+        </button>
+      </div>
+    </form>
+  </div>
+  <div class="col-md-5 image d-flex flex-column justify-content-center">
+    <div class="header">
+      <p class="p-2 sub-header-3">Hello, Friend!</p>
+    </div>
+    <p class="text p-2">
+      Enter your personal details and start journey with us
+    </p>
+    <br />
+    <div class="button">
+      <button class="button-2 p-2" type="button" (click)="navigateToSignUp()">
+        Sign Up
+      </button>
+    </div>
+  </div>
+</div>

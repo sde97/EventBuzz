@@ -1,0 +1,600 @@
+<app-user-navigation></app-user-navigation>
+<div class="event-content">
+  <div class="container d-flex justify-content-center">
+    <form [formGroup]="createEventForm" (ngSubmit)="onSubmit()">
+      <div class="page-data p-2">
+        <div class="page-data-title">
+          Create an Event
+        </div>
+        <div class="row">
+          <div class="col-md-12 section">
+            <div class="row section-header gayab">
+              <div class="col-md-2">
+                <div
+                  class="section-image"
+                  style="
+                    background-color: coral;
+                    border-radius: 40px;
+                    width: 80px;
+                    height: 80px;
+                    border: 1px solid;
+                  "
+                ></div>
+              </div>
+              <div class="col-md-10" style="padding-left: 20px;">
+                <div class="section-header-title">Basic Info</div>
+                <div class="section-header-content">
+                  Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                  Explicabo vero eos quia incidunt enim nobis?
+                </div>
+              </div>
+            </div>
+            <div class="row section-header mobile-pe-dikhega">
+              <div
+                class="col-3"
+                style="
+                  display: flex;
+                  flex-direction: column;
+                  justify-content: center;
+                "
+              >
+                <div
+                  class="section-image"
+                  style="
+                    background-color: coral;
+                    border-radius: 40px;
+                    width: 80px;
+                    height: 80px;
+                    border: 1px solid;
+                  "
+                ></div>
+              </div>
+              <div class="col-9" style="padding-left: 30px;">
+                <div class="section-header-title">Basic Info</div>
+                <div class="section-header-content">
+                  Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                  Explicabo vero eos quia incidunt enim nobis?
+                </div>
+              </div>
+            </div>
+            <br />
+            <hr />
+            <br />
+            <div class="row section-content">
+              <div class="col-md-12 d-flex flex-column justify-content-center">
+                <div class="form-group">
+                  <h6 class="p-2">Event Name</h6>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="eventName"
+                    formControlName="eventName"
+                  />
+                </div>
+                <div class="form-group">
+                  <h6 class="p-2">Location</h6>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="eventLocation"
+                    formControlName="eventLocation"
+                  />
+                </div>
+                <div class="form-group">
+                  <h6 class="p-2">Even Category</h6>
+                  <select
+                    class="form-control"
+                    id="eventCategory"
+                    formControlName="eventCategory"
+                  >
+                    <option value="" disabled selected>--Select--</option>
+                    <option *ngFor="let eventCategory of eventCategoryList">
+                      {{ eventCategory }}
+                    </option>
+                  </select>
+                </div>
+                <div class="form-row">
+                  <div class="form-group col-md-12" style="width: 100%;">
+                    <h6 class="p-2">Event Begins</h6>
+                    <input
+                      type="datetime-local"
+                      class="form-control"
+                      id="eventFromDate"
+                      formControlName="eventFromDate"
+                    />
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="form-group col-md-12" style="width: 100%;">
+                    <h6 class="p-2">Event Ends</h6>
+                    <input
+                      type="datetime-local"
+                      class="form-control"
+                      id="eventToDate"
+                      formControlName="eventToDate"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br /><br /><br /><br />
+        <div class="row">
+          <div class="col-md-12 section">
+            <div class="row section-header gayab">
+              <div class="col-md-2">
+                <div
+                  class="section-image"
+                  style="
+                    background-color: #d794eb;
+                    border-radius: 40px;
+                    width: 80px;
+                    height: 80px;
+                    border: 1px solid;
+                  "
+                ></div>
+              </div>
+              <div class="col-md-10" style="padding-left: 20px;">
+                <div class="section-header-title">Upload Photo</div>
+                <div class="section-header-content">
+                  Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                  Explicabo vero eos quia incidunt enim nobis?
+                </div>
+              </div>
+            </div>
+            <div class="row section-header mobile-pe-dikhega">
+              <div
+                class="col-3"
+                style="
+                  display: flex;
+                  flex-direction: column;
+                  justify-content: center;
+                "
+              >
+                <div
+                  class="section-image"
+                  style="
+                    background-color: #d794eb;
+                    border-radius: 40px;
+                    width: 80px;
+                    height: 80px;
+                    border: 1px solid;
+                  "
+                ></div>
+              </div>
+              <div class="col-9" style="padding-left: 30px;">
+                <div class="section-header-title">Basic Info</div>
+                <div class="section-header-content">
+                  Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                  Explicabo vero eos quia incidunt enim nobis?
+                </div>
+              </div>
+            </div>
+            <br />
+            <hr />
+            <br />
+            <div class="row section-content">
+              <div class="col-md-12">
+                <div
+                  class="custom-dropzone"
+                  ngx-dropzone
+                  [accept]="'image/*'"
+                  (change)="onSelect($event)"
+                  style="margin-bottom: 40px;"
+                >
+                  <ngx-dropzone-label>
+                    <div style="margin: 0px 30px 0px 30px;">
+                      <img
+                        src="../../../../assets/images/add_photo.svg"
+                        alt=""
+                        style="margin-bottom: 10px;"
+                      />
+                      <br />
+                      <p
+                        style="
+                          color: black;
+                          font-weight: 700;
+                          margin-bottom: 5px;
+                        "
+                      >
+                        Drag and drop your images
+                      </p>
+                      <p style="font-size: 12px; font-weight: 500;">
+                        Click here to upload images
+                      </p>
+                      <br />
+
+                      <p style="font-size: 12px; font-weight: 600;">
+                        Lorem ipsum, dolor sit amet consectetur adipisicing
+                        elit. Dolore totam suscipit asperiores provident
+                        corrupti distinctio.
+                      </p>
+                    </div>
+                  </ngx-dropzone-label>
+                  <ngx-dropzone-image-preview
+                    ngProjectAs="ngx-dropzone-preview"
+                    *ngFor="let f of files"
+                    [file]="f"
+                    [removable]="true"
+                    (removed)="onRemove(f)"
+                  >
+                    <!-- <ngx-dropzone-label
+                                >{{ f.name }} ({{ f.type }})</ngx-dropzone-label
+                              > -->
+                  </ngx-dropzone-image-preview>
+                </div>
+
+                <div class="form-group">
+                  <h6 class="p-2">Event Description</h6>
+                  <textarea
+                    type="text"
+                    class="form-control"
+                    id="eventDescription"
+                    placeholder="Write something about the event..."
+                    style="font-size: 14px; height: 200px;"
+                    formControlName="eventDescription"
+                  ></textarea>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br /><br /><br /><br />
+        <div class="row">
+          <div class="col-md-12 section">
+            <div class="row section-header gayab">
+              <div class="col-md-2">
+                <div
+                  class="section-image"
+                  style="
+                    background-color: #babbbc;
+                    border-radius: 40px;
+                    width: 80px;
+                    height: 80px;
+                    border: 1px solid;
+                  "
+                ></div>
+              </div>
+              <div class="col-md-10" style="padding-left: 20px;">
+                <div class="section-header-title">Organizer Details</div>
+                <div class="section-header-content">
+                  Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                  Explicabo vero eos quia incidunt enim nobis?
+                </div>
+              </div>
+            </div>
+            <div class="row section-header mobile-pe-dikhega">
+              <div
+                class="col-3"
+                style="
+                  display: flex;
+                  flex-direction: column;
+                  justify-content: center;
+                "
+              >
+                <div
+                  class="section-image"
+                  style="
+                    background-color: #babbbc;
+                    border-radius: 40px;
+                    width: 80px;
+                    height: 80px;
+                    border: 1px solid;
+                  "
+                ></div>
+              </div>
+              <div class="col-9" style="padding-left: 30px;">
+                <div class="section-header-title">Basic Info</div>
+                <div class="section-header-content">
+                  Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                  Explicabo vero eos quia incidunt enim nobis?
+                </div>
+              </div>
+            </div>
+            <br />
+            <hr />
+            <br />
+            <div class="row section-content">
+              <div class="col-md-12">
+                <div class="form-group">
+                  <h6 class="p-2">Type</h6>
+                  <select
+                    class="form-control"
+                    id="organizedType"
+                    formControlName="organizedType"
+                    #organizedType
+                  >
+                    <option value="" disabled selected>--Select--</option>
+                    <option *ngFor="let organizedType of organizedTypeList">
+                      {{ organizedType }}
+                    </option>
+                  </select>
+                </div>
+
+                <div
+                  class="form-group"
+                  *ngIf="organizedType.value == 'Corporate'"
+                >
+                  <h6 class="p-2">Organizer Name</h6>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="organizerName"
+                    formControlName="organizerName"
+                  />
+                  <h6 class="p-2">Organizer Phone</h6>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="organizerPhone"
+                    formControlName="organizerPhone"
+                  />
+                  <h6 class="p-2">Organizer Email</h6>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="organizerEmail"
+                    formControlName="organizerEmail"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br /><br /><br /><br />
+        <div class="row">
+          <div class="col-md-12 section">
+            <div class="row section-header gayab">
+              <div class="col-md-2">
+                <div
+                  class="section-image"
+                  style="
+                    background-color: #2caffe;
+                    border-radius: 40px;
+                    width: 80px;
+                    height: 80px;
+                    border: 1px solid;
+                  "
+                ></div>
+              </div>
+              <div class="col-md-10" style="padding-left: 20px;">
+                <div class="section-header-title">Ticketing Details</div>
+                <div class="section-header-content">
+                  Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                  Explicabo vero eos quia incidunt enim nobis?
+                </div>
+              </div>
+            </div>
+            <div class="row section-header mobile-pe-dikhega">
+              <div
+                class="col-3"
+                style="
+                  display: flex;
+                  flex-direction: column;
+                  justify-content: center;
+                "
+              >
+                <div
+                  class="section-image"
+                  style="
+                    background-color: #2caffe;
+                    border-radius: 40px;
+                    width: 80px;
+                    height: 80px;
+                    border: 1px solid;
+                  "
+                ></div>
+              </div>
+              <div class="col-9" style="padding-left: 30px;">
+                <div class="section-header-title">Basic Info</div>
+                <div class="section-header-content">
+                  Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                  Explicabo vero eos quia incidunt enim nobis?
+                </div>
+              </div>
+            </div>
+            <br />
+            <hr />
+            <div class="row section-content">
+              <div class="col-md-12 d-flex flex-column justify-content-center">
+                <div class="form-group">
+                  <h6 class="p-2">Event Type</h6>
+                  <select
+                    class="form-control"
+                    id="eventType"
+                    formControlName="eventType"
+                    #eventType
+                  >
+                    <option value="" disabled selected>--Select--</option>
+                    <option *ngFor="let eventType of eventTypeList">
+                      {{ eventType }}
+                    </option>
+                  </select>
+                </div>
+
+                <div class="open-event" *ngIf="eventType.value == 'Open'">
+                  <div class="form-group">
+                    <h6 class="p-2">Head Count</h6>
+                    <input
+                      class="form-control"
+                      list="headCountList"
+                      name="eventHeadCount"
+                      id="eventHeadCount"
+                      placeholder="How many people can attend the event?"
+                      formControlName="eventHeadCount"
+                      #eventType
+                    />
+                    <datalist id="headCountList">
+                      <option value="" disabled selected>--Select--</option>
+                      <option *ngFor="let i of headCountList">
+                        {{ i }}
+                      </option>
+                    </datalist>
+                  </div>
+                  <br />
+                  <div class="button" style="text-align: left;">
+                    <button
+                      type="button"
+                      class="add-ticket-button"
+                      style="padding: 0px;"
+                      (click)="onAddTicket()"
+                      [disabled]="disableAdd"
+                    >
+                      Add Ticket Type
+                    </button>
+                  </div>
+                  <br />
+                  <div
+                    class="form-row"
+                    *ngIf="hasTickets"
+                    style="
+                      margin-bottom: 5px;
+                      height: 50px;
+                      padding-bottom: 0px;
+                    "
+                  >
+                    <div class="form-group col-5 label-holder">
+                      <div class="has-tickets p-2">TICKET TYPE</div>
+                    </div>
+                    <div class="form-group col-3 label-holder">
+                      <div class="has-tickets p-2">QUANTITY</div>
+                    </div>
+                    <div class="form-group col-3 label-holder">
+                      <div class="has-tickets p-2">PRICE</div>
+                    </div>
+                  </div>
+                  <div class="tickets" formArrayName="ticketTypes">
+                    <div
+                      class="form-row"
+                      style="
+                        margin-bottom: 5px;
+                        height: 50px;
+                        padding-bottom: 0px;
+                      "
+                      [formGroupName]="i"
+                      *ngFor="
+                        let ticketType of ticketTypesControl;
+                        let i = index
+                      "
+                      [formGroupName]="i"
+                    >
+                      <div
+                        class="form-group col-5"
+                        style="height: 50px; padding-bottom: 0px;"
+                      >
+                        <input
+                          type="text"
+                          class="form-control"
+                          name="ticket-type-name"
+                          id="ticket-type-name"
+                          formControlName="ticketTypeName"
+                          disabled
+                        />
+                      </div>
+                      <div class="form-group col-3">
+                        <input
+                          type="number"
+                          class="form-control"
+                          id="ticket-type-quantity"
+                          formControlName="ticketTypeQuantity"
+                        />
+                      </div>
+                      <div class="form-group col-3">
+                        <input
+                          type="number"
+                          class="form-control"
+                          id="ticket-type-price"
+                          style="margin-bottom: 10px;"
+                          formControlName="ticketTypePrice"
+                        />
+                      </div>
+                      <div
+                        class="form-group col-1"
+                        style="display: flex; justify-content: center;"
+                      >
+                        <img
+                          src="../../../../assets/images/remove_button.svg"
+                          alt=""
+                          style="height: 50px; width: 40px; cursor: pointer;"
+                          (click)="onDeleteTicket(i)"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="closed-event" *ngIf="eventType.value == 'Closed'">
+                  <div class="form-group">
+                    <h6 class="p-2">Invited Users</h6>
+                    <div class="user-container">
+                      <span
+                        class="user-tag"
+                        *ngFor="let user of invitedUsers; let i = index"
+                      >
+                        <span class="user-tag-data">
+                          {{ user }}
+                        </span>
+                        <img
+                          src="../../../../assets/images/remove_button.svg"
+                          class="close-button"
+                          alt=""
+                          (click)="onDeleteUser(i)"
+                        />
+                      </span>
+                    </div>
+                  </div>
+                  <div class="form-row">
+                    <div class="form-group col-md-10">
+                      <h6 class="p-2">Name</h6>
+                      <input
+                        type="name"
+                        class="form-control"
+                        placeholder="Invitee Name"
+                        #newInviteName
+                      />
+                    </div>
+                  </div>
+                  <div class="form-row">
+                    <div class="form-group col-md-10">
+                      <h6 class="p-2">Email</h6>
+                      <input
+                        type="email"
+                        class="form-control"
+                        placeholder="invitee@somemailid.com"
+                        #newInviteEmail
+                      />
+                    </div>
+                    <div class="form-group col-md-2">
+                      <div class="button" style="margin-top: 43px;">
+                        <button
+                          type="button"
+                          class="add-button"
+                          style="padding: 0px;"
+                          (click)="
+                            onAddUser(newInviteName.value, newInviteEmail.value)
+                          "
+                        >
+                          Add
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="button" style="text-align: center; margin-top: 50px;">
+          <button
+            type="submit"
+            class="submit-button"
+            style="padding: 0px;"
+            [disabled]="!createEventForm.valid"
+          >
+            Submit
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

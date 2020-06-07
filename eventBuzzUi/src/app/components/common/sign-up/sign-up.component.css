@@ -1,0 +1,109 @@
+.row {
+  width: 100%;
+  margin: 0px;
+}
+.content {
+  height: 100vh;
+  padding: 20vh 12vw 25vh 12vw;
+}
+.header {
+  text-align: center;
+}
+
+.sub-header-2 {
+  font-weight: 800;
+  font-size: 40px;
+}
+.button {
+  text-align: center;
+}
+.button-1 {
+  height: 50px;
+  width: 150px;
+  background: none;
+  border-radius: 10px;
+  background-color: #7848f4;
+  border: 1px solid #7848f4;
+  color: white;
+  font-weight: 700;
+}
+.button-1:focus {
+  outline: none;
+}
+.button-1:hover {
+  background: #875af8;
+}
+
+label {
+  height: 50px;
+  padding: 12px 20px 12px 15px;
+  border: 2px solid rgba(0, 0, 0, 0.1);
+  font-size: 14px;
+}
+label::after {
+  height: 46px;
+  background-color: rgba(0, 0, 0, 0.1);
+  padding: 12px 20px 10px 20px;
+  border-radius: 0px;
+  border: none;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+select,
+input {
+  width: 100%;
+  height: 50px;
+  font-size: 14px;
+  padding-left: 15px;
+  border: 2px solid rgba(0, 0, 0, 0.1);
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.image {
+  height: 100vh;
+  background: linear-gradient(rgb(120, 72, 244, 0.2), rgb(120, 72, 244, 0.2)),
+    url("../../../../assets/images/sign-up.jpg");
+  background-size: cover;
+  color: white;
+  padding: 5vh 5vw 25vh 5vw;
+}
+.sub-header-3 {
+  font-weight: 700;
+  font-size: 50px;
+  margin-bottom: 0px;
+}
+.sub-header-1 {
+  color: white;
+  font-weight: 800;
+  font-size: 30px;
+}
+.text {
+  text-align: center;
+  font-size: 14px;
+}
+.button-2 {
+  height: 50px;
+  width: 150px;
+  background: none;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0);
+  color: white;
+  font-weight: 700;
+}
+.button-2:focus {
+  outline: none;
+}
+.button-2:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
